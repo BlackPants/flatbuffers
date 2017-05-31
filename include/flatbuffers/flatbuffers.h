@@ -1695,7 +1695,7 @@ class Verifier FLATBUFFERS_FINAL_CLASS {
       if (upper_bound_ < upper_bound)
         upper_bound_ =  upper_bound;
     #endif
-    return Check(elem_len <= (size_t) (end_ - buf_) &&
+    return Check(elem_len <= static_cast<size_t>(end_ - buf_) &&
                  elem >= buf_ &&
                  elem <= end_ - elem_len);
   }
